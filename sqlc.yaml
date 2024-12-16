@@ -1,0 +1,35 @@
+# version: "2"
+# project:
+#     id: ""
+# cloud:
+#     organization: ""
+#     project: ""
+#     hostname: ""
+# sql:
+#   - url: "postgres://root:secret@localhost:5432/simple_bank"  # Your database connection string
+#     schema: "./db/migration/"  # Path to your schema files (e.g., migrations)
+#     queries: "./db/query/"    # Path to your SQL query files
+# code:
+#   path: "./db/sqlc"                # Path to store the generated Go code
+#   go_package: ""  # The Go package name, change this accordingly
+#   emit_json_tags: true             # Add json tags to generated Go structs
+#   emit_prepared_queries: false     # Generate prepared statements
+#   emit_interface: false            # Do not generate interfaces
+#   emit_exact_table_names: false    # Keep table names as defined in SQL
+# overrides:
+#   go: null
+# plugins: []
+# rules: []
+
+
+version: "1"
+packages:
+  - name: db # package name
+    path: "./db/sqlc" # path to store golang code
+    queries: "./db/query/"
+    schema: "./db/migration/"
+    engine: "postgresql"
+    emit_json_tags: true
+    emit_prepared_queries: true
+    emit_interface: true
+    emit_exact_table_names: false

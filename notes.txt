@@ -1,0 +1,9 @@
+## To run the above command need to add wsl make "commad" to run the command in wsl
+
+##  To migrate use -source instead of -path (macOS)
+### migrate -source=file://db/migration -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+##
+
+
+This command to create the sqlc.yml file 
+docker run --rm -v "$(pwd):/src" -w /src kjconroy/sqlc init
