@@ -19,5 +19,8 @@ sqlc:
 test:
 	PATH=/snap/bin go test -v -cover ./... 2>/dev/null
 
-.PHONY: createdb dropdb postgres migrateup migratedown test
+testCI: 
+	go test -v -cover ./...
+
+.PHONY: createdb dropdb postgres migrateup migratedown test testCI
 
